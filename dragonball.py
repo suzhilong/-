@@ -53,7 +53,7 @@ proxies= {#该网站是http协议
 
 #从html中提取小图url
 def get_thumb_url(origi_url):
-	req = requests.get(origi_url)
+	req = requests.get(origi_url,headers=headers,proxies=proxies,timeout=60)
 	soup = BeautifulSoup(req.text,'html.parser')
 	img_urls = soup.select('.ItemThumb img')
 	urls = []
