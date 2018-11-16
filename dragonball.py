@@ -107,7 +107,10 @@ def img_downloader(urls):
 				print("成功,已完成%.2f" % (pencent*100) + '%')
 		else:
 			print("已存在,已完成%.2f" % (pencent*100) + '%')
-		time.sleep(1)
+		time.sleep(random.random() * 2)
+		#pause per 10 scrawl
+		if i//10 != 0:
+			time.sleep(5 + random.random() * 5)
 
 
 def main():
