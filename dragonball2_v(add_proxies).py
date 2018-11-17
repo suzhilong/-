@@ -55,7 +55,9 @@ user_agent = [
 #代理
 http_ip = [
 		'',#不用代理
-		'203.130.46.108:9090',
+		'203.130.46.108:9090', 
+		'112.95.207.131:8888', 
+		'112.95.207.138:8888',
 		]
 https_ip = [
 		'',
@@ -197,7 +199,12 @@ def get_thumb_url(origi_url,ip_pool):
 		for img_url in img_urls:
 			img_url = img_url.get('src')
 			urls.append(img_url)
-		return urls
+		if urls != []:
+			#取出的是所需要的
+			return urls
+		else:
+			get_thumb_url(origi_url,ip_pool)
+
 	
 
 # 处理url，得到大图url
@@ -301,12 +308,12 @@ if __name__ == '__main__':
 	flag = 1
 	while flag != 0:
 		#修改需要爬取的页数
-		available_ip=scraw_proxies(10)
+		#available_ip=scraw_proxies(5)
 		#print(available_ip)
 		#print('=================================')
 		#加入代理池
 		ip_pool = http_ip
-		ip_pool.extend(available_ip)
+		#ip_pool.extend(available_ip)
 		#print(ip_pool)
 		Print.info(ip_pool)
 		#print('代理爬取完毕\n==================================\n开始爬取漫画：')
