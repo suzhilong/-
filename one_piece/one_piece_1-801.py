@@ -2,7 +2,7 @@
 #	python3
 #	home page: https://manhua.fzdm.com/2/
 #	1-801话
-#	2020.4.25 
+#	2020.4.26 19:40
 ##################
 # -*- coding: utf-8 -*-	
 import requests
